@@ -35,6 +35,25 @@ review_id,product_id,category,review_date,rating
 
 The mapper and reducer are Python scripts run by Hadoop Streaming. Streaming lets Hadoop use executable scripts as mapper and reducer programs; each reads standard input and writes tab-separated results to standard output. See the [Apache Hadoop Streaming guide](https://hadoop.apache.org/docs/current/hadoop-streaming/HadoopStreaming.html).
 
+## Browser demo
+
+The Streamlit dashboard provides a browser-based demo with review counts and charts by month, product, and category. It uses the same CSV fields and date formats as the Hadoop mapper. The dashboard processes uploaded CSVs in the app process; use the Hadoop Streaming job above for distributed processing on large datasets.
+
+Run it locally from the project folder:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Streamlit prints a local URL, usually `http://localhost:8501`. Open it in your browser. On Windows PowerShell, activate the environment with `.venv\\Scripts\\Activate.ps1` instead of the `source` command.
+
+## Publish the browser demo
+
+Streamlit Community Cloud deploys the dashboard from GitHub. First push this project to a GitHub repository. Then sign in at [share.streamlit.io](https://share.streamlit.io), choose **Create app**, select your repository and the `main` branch, set the app file path to `app.py`, and select **Deploy**. The deployed dashboard gets a shareable `streamlit.app` URL. The Hadoop cluster itself is not hosted by this dashboard; running the distributed Hadoop job in the cloud requires a separate Hadoop service or cluster.
+
 ## Build and run (Ubuntu or WSL2)
 
 Hadoop must already be installed and configured, with HDFS and YARN running for a pseudo-distributed setup. Use the Hadoop installation provided by your instructor if available.
