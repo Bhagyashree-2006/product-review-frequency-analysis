@@ -1,0 +1,15 @@
+# Local Hadoop and Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated job output and report rendering files
+work/
+outputs/*
+!outputs/big_data_analysis_report_indexed.docx
+outputs/*_render/
+
+# Hadoop local metadata
+logs/
+*.log

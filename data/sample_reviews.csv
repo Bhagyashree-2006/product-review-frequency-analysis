@@ -1,0 +1,7 @@
+review_id,product_id,category,review_date,rating
+R001,P100,Electronics,2026-10-01,5
+R002,P100,Electronics,2026-10-03,4
+R003,P200,Books,2026-10-08,5
+R004,P100,Electronics,2026-11-01,3
+R005,P300,Home,2026-11-02,4
+R006,P200,Books,2026-11-03,2
